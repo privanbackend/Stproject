@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static "style.css" %}">
+</head>
+<body>
+  <div class="wrapper">
+    <form method="post" action="">
+        {% csrf_token %}
+        <h1>Register</h1>
+        <div class="input-box">
+            <input type="text" placeholder="Username" id="id_name" name="username" required>
+            <i class='bx bxs-user'></i>
+        </div>
+        <div class="input-box">
+            <input type="email" placeholder="Email" id="id_email" name="email" required>
+            <i class='bx bxs-lock-alt' ></i>
+        </div>
+        <div class="input-box">
+            <input type="password" id="id_password" placeholder="Password" name="password1" required>
+            <i class='bx bxs-lock-alt' ></i>
+        </div>
+        <div class="remember-forgot">
+          <label><input type="checkbox">Remember Me</label>
+          <a href="#"></a>
+        </div>
+        <button type="submit" class="btn">Register</button>
+        <div class="register-link">
+          <p>Already have an account? <a href="{% url "login" %}">Login</a></p>
+        </div>
+      </form>
+    </div>
+      
+</body>
+</html>
