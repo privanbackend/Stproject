@@ -7,13 +7,7 @@
   <title>Login</title>
   {% load static %}
   <link rel="stylesheet" href="{% static "style.css" %}">
-  <style>
-    .error-message {
-      color: red;
-      text-align: center;
-      padding-top: 5px;
-    }
-  </style>
+  
 </head>
 <body>
   <div class="wrapper">
@@ -21,7 +15,7 @@
         {% csrf_token %}
       <h1>Login</h1>
       {% if message %}
-        <p class="error-message">{{ message }}</p>
+          <p class="error-message">{{ message }}</p>
       {% endif %}
       <div class="input-box">
         <input type="text" placeholder="Username" id="id_name" name="username" required>
