@@ -55,5 +55,7 @@ def signout(request):
     logout(request)
     return redirect('login')
 
+def games(request):
+    return render(request, 'games.html')
 
 

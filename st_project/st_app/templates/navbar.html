@@ -1,36 +1,39 @@
 
-  {% load static %}
-    <nav class="navbar  bg-dark">
-        <div class="container-fluid bg-dark">
-            <button class="openbtn " onclick="openNav()">☰</button> 
-            <img src="{% static "assets/logo.png" %}" alt="" width="100px" class="me-auto" > 
-            <div class="dropdown bg-dark ">
-                <button class="btn text-white dropdown-toggle bg-dark " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                  Welcome {{request.user}}
-                </button>
-                <ul class="dropdown-menu bg-dark " aria-labelledby="dropdownMenuButton1">
-                  <li><a class="dropdown-item bg-dark text-white" href="/logout">Logout</a></li>
-              
-                </ul>
-              </div>
-        </div>
-        
-    </nav>
 
-    <div id="mySidebar" class="sidebar">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
-        <a href="#">Link 4</a>
+{% load static %}
+<nav class="navbar  bg-dark">
+    <div class="container-fluid bg-dark">
+        <button class="openbtn " onclick="openNav()">☰</button> 
+        <img src="{% static "assets/logo.png" %}" alt="" width="100px" class="me-auto ms-5" > 
+        <div class="dropdown bg-dark ">
+            <button class="btn text-white dropdown-toggle bg-dark " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              Welcome {{request.user}}
+              <i class="fa-solid fa-user ms-3" style="color: #FFD43B;"></i>
+            </button>
+            <ul class="dropdown-menu bg-dark " aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item bg-dark text-white" href="/logout">Logout</a></li>
+          
+          
+            </ul>
+          </div>
     </div>
-    <script>
-        function openNav() {
-            document.getElementById("mySidebar").style.width = "250px";
-        }
+    
+</nav>
 
-        function closeNav() {
-            document.getElementById("mySidebar").style.width = "0";
-        }
-    </script>
-   
+<div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="/home">Home</a>
+    <a href="/games">Games</a>
+    <a href="#">Services</a>
+    <a href="#">Settings</a>
+    <a href="#">About us</a>
+</div>
+<script>
+    function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+    }
+</script>
